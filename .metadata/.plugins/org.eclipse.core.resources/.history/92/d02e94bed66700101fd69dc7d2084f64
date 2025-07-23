@@ -19,8 +19,4 @@ public class Inventory {
 		}
 		return result;
 	}
-
-	public List<Guitar> getAllGuitars() {
-		return new ArrayList<>(guitars);
-	}
 }

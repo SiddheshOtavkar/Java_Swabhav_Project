@@ -1,0 +1,135 @@
+/*
+ * Select Model: 1. Stratocastor 2. Les Paul 3. D-28 4. SG Standard 5.
+ * Telecaster
+ */
+// Main Tester Class
+package com.miniproject.guitar.solution2;
+
+import java.util.*;
+
+public class FindGuitarTester {
+	public static void main(String[] args) {
+		Inventory inventory = new Inventory();
+		initializeInventory(inventory);
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+			System.out.println("What would you like to do?");
+			System.out.println("1. Search Guitar");
+			System.out.println("2. Exit");
+			System.out.print("Enter your choice: ");
+			String choice = sc.nextLine().trim();
+
+			if (choice.equals("2")) {
+				System.out.println("Thank you for using Guitar Finder!");
+				break;
+			} else if (!choice.equals("1")) {
+				System.out.println("Invalid option. Please enter 1 or 2.");
+				continue;
+			}
+
+			System.out.println("Enter the model you are looking for or type 'skip':");
+			String modelInput = sc.nextLine().trim();
+			String model = modelInput.equalsIgnoreCase("skip") ? null : modelInput;
+
+			Builder builder = selectBuilder(sc);
+			Type type = selectType(sc);
+			Wood backWood = selectWood(sc, "Back"); // wood cannot be skipped
+			Wood topWood = selectWood(sc, "Top"); // wood cannot be skipped
+
+			GuitarSpec searchSpec = new GuitarSpec(builder, model, type, backWood, topWood);
+			List<Guitar> matches = inventory.search(searchSpec);
+
+			if (matches.isEmpty()) {
+				System.out.println("Sorry, we have nothing matching your preference.");
+			} else {
+				for (Guitar guitar : matches) {
+					GuitarSpec spec = guitar.getSpec();
+					System.out.println("\nYou might like this " + spec.getBuilder() + " " + spec.getModel() + " "
+							+ spec.getType() + " guitar:\n   " + spec.getBackWood() + " back and sides,\n   "
+							+ spec.getTopWood() + " top.\n   Price: $" + guitar.getPrice());
+				}
+			}
+		}
+		sc.close();
+	}
+
+	private static Builder selectBuilder(Scanner sc) {
+		while (true) {
+			System.out.println("Select Builder:");
+			System.out.println("1. FENDER\n2. GIBSON\n3. MARTIN\n4. COLLINGS\n5. TAYLOR\n6. Skip");
+			String input = sc.nextLine().trim();
+			switch (input) {
+			case "1":
+				return Builder.FENDER;
+			case "2":
+				return Builder.GIBSON;
+			case "3":
+				return Builder.MARTIN;
+			case "4":
+				return Builder.COLLINGS;
+			case "5":
+				return Builder.TAYLOR;
+			case "6":
+			case "skip":
+				return null;
+			default:
+				System.out.println("Invalid input! Only numbers (1–6) are allowed.");
+			}
+		}
+	}
+
+	private static Type selectType(Scanner sc) {
+		while (true) {
+			System.out.println("Select Type:");
+			System.out.println("1. ACOUSTIC\n2. ELECTRIC\n3. Skip");
+			String input = sc.nextLine().trim();
+			switch (input) {
+			case "1":
+				return Type.ACOUSTIC;
+			case "2":
+				return Type.ELECTRIC;
+			case "3":
+			case "skip":
+				return null;
+			default:
+				System.out.println("Invalid input! Only numbers (1–3) are allowed.");
+			}
+		}
+	}
+
+	private static Wood selectWood(Scanner sc, String label) {
+		while (true) {
+			System.out.println("Select " + label + " Wood:");
+			System.out.println("1. MAHOGANY\n2. MAPLE\n3. ALDER\n4. ROSEWOOD\n5. CEDAR");
+			String input = sc.nextLine().trim();
+			switch (input) {
+			case "1":
+				return Wood.MAHOGANY;
+			case "2":
+				return Wood.MAPLE;
+			case "3":
+				return Wood.ALDER;
+			case "4":
+				return Wood.ROSEWOOD;
+			case "5":
+				return Wood.CEDAR;
+			default:
+				System.out.println("Invalid input! Please enter number between 1 and 5.");
+			}
+		}
+	}
+
+	private static void initializeInventory(Inventory inventory) {
+		inventory.addGuitar("G001", 1500,
+				new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
+		inventory.addGuitar("G002", 1800,
+				new GuitarSpec(Builder.GIBSON, "Les Paul", Type.ELECTRIC, Wood.MAPLE, Wood.MAHOGANY));
+		inventory.addGuitar("G003", 1100,
+				new GuitarSpec(Builder.MARTIN, "D-28", Type.ACOUSTIC, Wood.ROSEWOOD, Wood.CEDAR));
+		inventory.addGuitar("G004", 1300,
+				new GuitarSpec(Builder.COLLINGS, "OM2H", Type.ACOUSTIC, Wood.ROSEWOOD, Wood.ROSEWOOD));
+		inventory.addGuitar("G005", 1600,
+				new GuitarSpec(Builder.TAYLOR, "314ce", Type.ACOUSTIC, Wood.MAPLE, Wood.MAPLE));
+	}
+}

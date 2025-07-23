@@ -9,7 +9,7 @@ public class GuitarSpec {
 
 	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
 		this.builder = builder;
-		this.model = model != null ? model.toLowerCase() : null;
+		this.model = model;
 		this.type = type;
 		this.backWood = backWood;
 		this.topWood = topWood;
@@ -36,15 +36,15 @@ public class GuitarSpec {
 	}
 
 	public boolean matches(GuitarSpec otherSpec) {
-		if (builder != null && otherSpec.builder != null && !builder.equals(otherSpec.builder))
+		if (builder != null && !builder.equals(otherSpec.builder))
 			return false;
-		if (model != null && otherSpec.model != null && !model.equalsIgnoreCase(otherSpec.model))
+		if (model != null && !model.equalsIgnoreCase("") && !model.equalsIgnoreCase(otherSpec.model))
 			return false;
-		if (type != null && otherSpec.type != null && !type.equals(otherSpec.type))
+		if (type != null && !type.equals(otherSpec.type))
 			return false;
-		if (backWood != null && otherSpec.backWood != null && !backWood.equals(otherSpec.backWood))
+		if (backWood != null && !backWood.equals(otherSpec.backWood))
 			return false;
-		if (topWood != null && otherSpec.topWood != null && !topWood.equals(otherSpec.topWood))
+		if (topWood != null && !topWood.equals(otherSpec.topWood))
 			return false;
 		return true;
 	}

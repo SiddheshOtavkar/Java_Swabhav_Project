@@ -11,16 +11,12 @@ public class Inventory {
 	}
 
 	public List<Guitar> search(GuitarSpec searchSpec) {
-		List<Guitar> result = new ArrayList<>();
+		List<Guitar> matchingGuitars = new ArrayList<>();
 		for (Guitar guitar : guitars) {
 			if (guitar.getSpec().matches(searchSpec)) {
-				result.add(guitar);
+				matchingGuitars.add(guitar);
 			}
 		}
-		return result;
-	}
-
-	public List<Guitar> getAllGuitars() {
-		return new ArrayList<>(guitars);
+		return matchingGuitars;
 	}
 }
