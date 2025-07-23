@@ -1,3 +1,8 @@
+/*
+ * Select Model: 1. Stratocastor 2. Les Paul 3. D-28 4. SG Standard 5.
+ * Telecaster
+ */
+// Main Tester Class
 package com.miniproject.guitar.solution2;
 
 import java.util.*;
