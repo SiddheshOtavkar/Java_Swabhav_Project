@@ -1,0 +1,15 @@
+package com.aurionpro.facade;
+
+public class EmployeeClient {
+
+	public void getEmployeeDetails() {
+		EmployeeFacade facade = new EmployeeFacade(); // Client has Employee Facade.
+		
+		facade.insert();
+		System.out.println();
+		
+		Employee employee = facade.getEmployeeDetails(sid@gmail.com); // just exposed certain method
+
+		System.out.println("Client received: " + employee);
+	}
+}

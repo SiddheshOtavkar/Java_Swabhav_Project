@@ -1,0 +1,25 @@
+package com.aurionpro.test;
+
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+public class NestedExampleTest {
+
+	@Nested
+	class group1 {
+
+		@Test
+		void test1() {
+			System.out.println("Testing Test 1");
+		}
+	}
+
+	class group2 {
+
+		@Test
+		void test2() {
+			System.out.println("Testing Test 1");
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.aurionpro.test;
+
+public class NestedExampleTest {
+	
+	class group1 {
+		
+		@Test
+		void test1() {
+			
+		}
+	}
+	
+}

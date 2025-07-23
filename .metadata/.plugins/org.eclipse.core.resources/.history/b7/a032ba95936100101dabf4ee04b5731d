@@ -1,0 +1,16 @@
+package com.solidPrinciples.miniproject;
+
+public class Main {
+	public static void main(String[] args) {
+		// 1. Create an order
+        Order order = new Order("ELECTRONICS", 1000);
+
+        // 2. Choose concrete strategies (could come from config/UI)
+        IDiscountStrategy discount   = new ElectronicsDiscount();
+        IPaymentProcessor payment    = new CreditCardProcessor();
+        INotification notifier           = new EmailNotifier();
+
+        // 3. Run workflow
+        OrderProcessor processor =
+	}
+}

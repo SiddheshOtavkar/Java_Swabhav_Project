@@ -1,0 +1,20 @@
+package com.miniproject.guitar.violation;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Inventory {
+	
+	private List guitars;
+	
+	public Inventory() {
+		guitars = new LinkedList<String>();
+	}
+
+	public void addGuitar(String serialNumber, double price, String builder, String model, String type, String backWood, String topWood) 
+	{
+		Guitar guitar = new Guitar(serialNumber, builder, model, type, backWood, topWood, price);
+		
+		guitars.add(guitar);
+	}
+}

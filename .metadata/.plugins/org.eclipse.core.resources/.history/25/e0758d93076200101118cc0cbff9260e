@@ -1,0 +1,8 @@
+package com.aurionpro.prototype;
+
+import java.util.List;
+
+public class BookShop {
+	private String shopName;
+	List<Book> list
+}

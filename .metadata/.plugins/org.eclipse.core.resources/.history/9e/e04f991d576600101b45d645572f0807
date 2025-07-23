@@ -1,0 +1,12 @@
+package com.aurionpro.assignment2;
+
+public class StringProcessor {
+    public boolean isPalindrome(String str) {
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equalsIgnoreCase(reversed);
+    }
+
+    public String reverse(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+}

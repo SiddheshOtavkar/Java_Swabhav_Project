@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.aurionpro.test.Student&apos; to &apos;StudentTest&apos;&#x0D;&#x0A;- Original project: &apos;02-ArrayObject&apos;&#x0D;&#x0A;- Original element: &apos;com.aurionpro.test.Student&apos;&#x0D;&#x0A;- Renamed element: &apos;com.aurionpro.test.StudentTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Student&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.aurionpro.test{Student.java[Student" matchStrategy="1" name="StudentTest" qualified="false" references="true" similarDeclarations="false" stamp="1750317815549" textual="false" version="1.0"/>
+</session>

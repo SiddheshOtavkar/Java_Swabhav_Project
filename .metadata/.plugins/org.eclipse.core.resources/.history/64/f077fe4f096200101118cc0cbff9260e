@@ -1,0 +1,23 @@
+package com.aurionpro.prototype;
+
+public class Demo {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		BookShop bs = new BookShop();
+		bs.setShopName("Novelty");
+		bs.loadData();
+		bs.getBooks().remove(0)
+		System.out.println(bs);
+
+		System.out.println();
+
+//		BookShop bs1 = new BookShop();
+		BookShop bs1 = (BookShop) bs.clone(); // --> shallow cloning
+		bs1.setShopName("A1");
+//		bs1.loadData();
+		System.out.println(bs1);
+		
+	}
+
+}

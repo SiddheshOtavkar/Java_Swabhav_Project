@@ -1,0 +1,11 @@
+package com.solidPrinciples.miniproject;
+
+public class PayPalProcessor implements IPaymentProcessor {
+
+	@Override
+	public void pay(double amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

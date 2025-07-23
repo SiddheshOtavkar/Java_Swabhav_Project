@@ -1,0 +1,10 @@
+package com.solidPrinciples.miniproject;
+
+public class CreditCardProcessor implements IPaymentProcessor {
+
+	@Override
+	public void pay(double amount) {
+		
+	}
+
+}

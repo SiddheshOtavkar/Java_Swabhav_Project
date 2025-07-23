@@ -1,0 +1,12 @@
+package com.aurionpro.facade;
+
+public class EmployeeClient {
+	
+	public void getEmployeeDetails() {
+		
+		EmployeeFacade employeeFacade = new EmployeeFacade();
+//		Client has Employee Facade.
+		
+		Employee employeeDetails = employeeFacade.getEmployeeDetails(121222);
+	}
+}

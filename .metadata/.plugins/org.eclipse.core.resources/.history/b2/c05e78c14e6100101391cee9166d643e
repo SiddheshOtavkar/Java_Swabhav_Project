@@ -1,0 +1,11 @@
+package com.aurionpro.DIP;
+
+public class PostgreSql implements IDatabase {
+
+	@Override
+	public void connect() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

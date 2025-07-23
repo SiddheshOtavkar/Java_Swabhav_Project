@@ -1,0 +1,73 @@
+package com.miniproject.guitar.solution2;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class FindGuitarTester {
+
+	public static void main(String[] args) {
+		Inventory inventory = new Inventory();
+		initializeInventory(inventory);
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the model you are looking for: ");
+		String model = sc.nextLine();
+
+		System.out.println("Select Builder: 1. FENDER 2. GIBSON 3. MARTIN 4. COLLINGS 5. TAYLOR");
+		Builder builder = switch (sc.nextInt()) {
+			case 1 -> Builder.FENDER;
+			case 2 -> Builder.GIBSON;
+			case 3 -> Builder.MARTIN;
+			case 4 -> Builder.COLLINGS;
+			case 5 -> Builder.TAYLOR;
+			default -> null;
+		};
+
+		System.out.println("Select Type: 1. ACOUSTIC  2. ELECTRIC");
+		Type type = (sc.nextInt() == 1) ? Type.ACOUSTIC : Type.ELECTRIC;
+
+		System.out.println("Select Back Wood: 1. MAHOGANY 2. MAPLE 3. ALDER 4. ROSEWOOD 5. CEDAR");
+		Wood backWood = switch (sc.nextInt()) {
+			case 1 -> Wood.MAHOGANY;
+			case 2 -> Wood.MAPLE;
+			case 3 -> Wood.ALDER;
+			case 4 -> Wood.ROSEWOOD;
+			case 5 -> Wood.CEDAR;
+			default -> null;
+		};
+
+		System.out.println("Select Top Wood: 1. MAHOGANY 2. MAPLE 3. ALDER 4. ROSEWOOD 5. CEDAR");
+		Wood topWood = switch (sc.nextInt()) {
+			case 1 -> Wood.MAHOGANY;
+			case 2 -> Wood.MAPLE;
+			case 3 -> Wood.ALDER;
+			case 4 -> Wood.ROSEWOOD;
+			case 5 -> Wood.CEDAR;
+			default -> null;
+		};
+
+		GuitarSpec userSpec = new GuitarSpec(builder, model, type, backWood, topWood);
+		List<Guitar> matches = inventory.search(userSpec);
+
+		if (matches.isEmpty()) {
+			System.out.println("Sorry, we have nothing matching your preference.");
+		} else {
+			for (Guitar guitar : matches) {
+				GuitarSpec spec = guitar.getSpec();
+				System.out.println("You might like this " + spec.getBuilder() + " " + spec.getModel() + " "
+						+ spec.getType() + " guitar:\n   " + spec.getBackWood() + " back and sides,\n   "
+						+ spec.getTopWood() + " top.\nYou can have it for only $" + guitar.getPrice() + "!\n");
+			}
+		}
+
+		sc.close();
+	}
+
+	private static void initializeInventory(Inventory inventory) {
+		inventory.addGuitar("V001", 1500, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
+		inventory.addGuitar("V002", 1200, new GuitarSpec(Builder.GIBSON, "Les Paul", Type.ELECTRIC, Wood.MAPLE, Wood.MAHOGANY));
+		inventory.addGuitar("V003", 1300, new GuitarSpec(Builder.MARTIN, "D-28", Type.ACOUSTIC, Wood.ROSEWOOD, Wood.CEDAR));
+	}
+}
+

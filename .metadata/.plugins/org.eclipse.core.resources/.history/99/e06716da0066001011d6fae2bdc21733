@@ -1,0 +1,11 @@
+package com.aurionpro.test;
+
+public class AssertAllDemo {
+	
+	public void testUserDetails() {
+		String name = "Siddhesh";
+		int age = 22;
+		String city = "Mumbai";
+	}
+	
+}

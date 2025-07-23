@@ -1,0 +1,17 @@
+package com.aurionpro.facade;
+
+public class EmployeeFacade {
+	private EmployeeDAO employeeDAO;
+
+	public EmployeeFacade() {
+		employeeDAO = new EmployeeDAO();
+	}
+
+	public void insert() {
+		employeeDAO.insert();
+	}
+
+	public Employee getEmployeeDetails(String empID) {
+		return employeeDAO.getEmployeeDetails(empID);
+	}
+}

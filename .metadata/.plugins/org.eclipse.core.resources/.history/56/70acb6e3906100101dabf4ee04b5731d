@@ -1,0 +1,11 @@
+package com.solidPrinciples.miniproject;
+
+public class NoDiscount implements IDiscountStrategy {
+
+	@Override
+	public double applyDiscount(double amount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

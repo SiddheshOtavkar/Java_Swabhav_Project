@@ -1,0 +1,13 @@
+package com.aurionpro.DIP;
+
+public class ApplicationDIP {
+	
+	IDatabase database;
+	
+	public ApplicationDIP(IDatabase data) {
+		this.database = data;
+	}
+	
+	
+	
+}

@@ -1,0 +1,8 @@
+package com.aurionpro.prototype;
+
+public class Book {
+	private int bookID;
+	private String bookName;
+	
+	
+}

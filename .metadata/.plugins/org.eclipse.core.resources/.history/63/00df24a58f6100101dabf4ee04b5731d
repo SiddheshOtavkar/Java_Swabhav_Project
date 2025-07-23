@@ -1,0 +1,11 @@
+package com.solidPrinciples.miniproject;
+
+public class SMSNotification implements INotification {
+
+	@Override
+	public void sendNotification(Order order) {
+		// TODO Auto-generated method stub
+		 System.out.println("SMS sent for order: " + order.getProductType());
+	}
+	
+}

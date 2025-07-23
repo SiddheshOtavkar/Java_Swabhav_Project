@@ -1,0 +1,22 @@
+package com.miniproject.guitar.solution2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Inventory {
+	private List<Guitar> guitars = new ArrayList<>();
+
+	public void addGuitar(String serialNumber, double price, GuitarSpec spec) {
+		guitars.add(new Guitar(serialNumber, price, spec));
+	}
+
+	public List<Guitar> search(GuitarSpec searchSpec) {
+		List<Guitar> matchingGuitars = new ArrayList<>();
+		for (Guitar guitar : guitars) {
+			if (guitar.getSpec().matches(searchSpec)) {
+				matchingGuitars.add(guitar);
+			}
+		}
+		return matchingGuitars;
+	}
+}

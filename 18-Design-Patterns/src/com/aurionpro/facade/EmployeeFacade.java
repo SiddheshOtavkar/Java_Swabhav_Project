@@ -1,0 +1,18 @@
+package com.aurionpro.facade;
+
+public class EmployeeFacade {
+	private EmployeeDAO employeeDAO;
+
+	public EmployeeFacade() {
+		employeeDAO = new EmployeeDAO();
+	}
+	
+//  Only 2 methods are exposed to the client in facade
+	public void insert() {
+		employeeDAO.insert();
+	}
+
+	public Employee getEmployeeDetails(int empID) {
+		return employeeDAO.getEmployeeDetails(empID);
+	}
+}

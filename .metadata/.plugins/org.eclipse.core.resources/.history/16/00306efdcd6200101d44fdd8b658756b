@@ -1,0 +1,12 @@
+package com.aurionpro.facade;
+
+public class EmployeeClient {
+//		Client has Employee Facade.
+	// just exposed certain method
+
+	public void getEmployeeDetails() {
+		EmployeeFacade facade = new EmployeeFacade();
+		Employee employee = facade.getEmployeeDetails(121222);
+		System.out.println("Client received: " + employee);
+	}
+}

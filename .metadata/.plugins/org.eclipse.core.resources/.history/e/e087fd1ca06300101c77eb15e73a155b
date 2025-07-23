@@ -1,0 +1,23 @@
+package com.aurionpro.mediator;
+
+public class MediatorPatternTest {
+	
+	public static void main(String[] args) {
+		
+		IChatMediator mediator = new ChatApp();
+
+		User user1 = new ChatUser(mediator, "Siddhesh");
+		User user2 = new ChatUser(mediator, "Amit");
+		User user3 = new ChatUser(mediator, "Rohan");
+		User user4 = new ChatUser(mediator, "Ravi");
+
+		mediator.addUser(user1);
+		mediator.addUser(user2);
+		mediator.addUser(user3);
+		mediator.addUser(user4);
+
+		user1.send("Hello Everyone!");
+		user1.receive();
+		
+	}
+}

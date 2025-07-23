@@ -1,0 +1,55 @@
+package com.facade.tic_tac_toe;
+
+import java.util.Scanner;
+
+public class TicTacToeFacade {
+ private final Scanner scanner;
+ private final Board board;
+ private final Player player1;
+ private final Player player2;
+ private final GameEngine engine;
+
+ public TicTacToeFacade() {
+     scanner = new Scanner(System.in);
+     board = new Board();
+
+     System.out.println("Welcome to Tic Tac Toe!");
+     System.out.print("Player 1, enter your name: ");
+     String name1 = scanner.nextLine();
+     System.out.print("Player 2, enter your name: ");
+     String name2 = scanner.nextLine();
+
+     player1 = new Player(name1, Symbol.X);
+     player2 = new Player(name2, Symbol.O);
+     engine = new GameEngine(player1, player2, board);
+ }
+
+ public void startGame() {
+     board.displayBoard();
+     GameStatus status = GameStatus.IN_PROGRESS;
+
+     while (status == GameStatus.IN_PROGRESS) {
+         Player currentPlayer = engine.getCurrentPlayer();
+         System.out.printf("%s's (%s) turn. Enter row and column (0-2): ", currentPlayer.getName(), currentPlayer.getSymbol());
+         int row, col;
+
+         try {
+             row = scanner.nextInt();
+             col = scanner.nextInt();
+         } catch (Exception e) {
+             System.out.println("Please enter valid numbers.");
+             scanner.nextLine(); // clear invalid input
+             continue;
+         }
+
+         status = engine.playTurn(row, col);
+     }
+
+     if (status == GameStatus.WIN) {
+         System.out.println("Result: " + engine.getCurrentPlayer().getName() + " wins! Congratulations!");
+     } else if (status == GameStatus.DRAW) {
+         System.out.println("Result: It's a draw!");
+     }
+ }
+}
+

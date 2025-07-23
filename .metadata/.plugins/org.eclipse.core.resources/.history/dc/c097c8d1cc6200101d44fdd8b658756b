@@ -1,0 +1,8 @@
+package com.aurionpro.facade;
+
+public class EmployeeDAO {
+	
+	public void insert() {
+		
+	}
+}

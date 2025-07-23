@@ -1,0 +1,21 @@
+package com.solidPrinciples.miniproject;
+
+public class OrderProcessor {
+	private final DiscountStrategy discountStrategy;
+    private final PaymentProcessor paymentProcessor;
+    private final Notifier notifier;
+
+    public OrderProcessor(DiscountStrategy discountStrategy,
+                          PaymentProcessor paymentProcessor,
+                          Notifier notifier) {
+        this.discountStrategy = discountStrategy;
+        this.paymentProcessor = paymentProcessor;
+        this.notifier         = notifier;
+    }
+
+    public void process(Order order) {
+        double net = discountStrategy.applyDiscount(order.getAmount());
+        paymentProcessor.pay(net);
+        notifier.sendNotification(order);
+    }
+}

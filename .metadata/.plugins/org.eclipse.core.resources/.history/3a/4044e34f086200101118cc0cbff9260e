@@ -1,0 +1,16 @@
+package com.aurionpro.prototype;
+
+public class Demo {
+	public static void main(String[] args) {
+		BookShop bs = new BookShop();
+		bs.setShopName("Novelty");
+		bs.loadData();
+		System.out.println(bs);
+		
+		System.out.println();
+		
+		BookShop bs1 = new BookShop();
+		bs.setShopName("A1");
+		System.out.println(bs1);
+	}
+}
