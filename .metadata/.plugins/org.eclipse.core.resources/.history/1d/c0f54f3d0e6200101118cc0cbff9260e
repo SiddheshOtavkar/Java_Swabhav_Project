@@ -1,7 +1,0 @@
-package com.aurionpro.prototype;
-
-public class DemoNormal {
-	public static void main(String[] args) {
-		
-	}
-}

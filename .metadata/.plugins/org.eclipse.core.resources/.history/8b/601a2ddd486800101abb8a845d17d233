@@ -119,26 +119,16 @@ public class FindGuitarTester {
 			System.out.println("No guitars in inventory.");
 			return;
 		}
-
-		System.out.println("\n----------------------------------------------------------------------------------------------");
-		System.out.printf("| %-8s | %-10s | %-8s | %-8s | %-10s | %-10s | %-7s |\n", 
-			"Serial", "Model", "Builder", "Type", "Back Wood", "Top Wood", "Price");
-		System.out.println("\n----------------------------------------------------------------------------------------------");
-
 		for (Guitar guitar : guitars) {
 			GuitarSpec spec = guitar.getSpec();
-			System.out.printf("| %-8s | %-10s | %-8s | %-8s | %-10s | %-10s | $%-6.2f |\n",
-				guitar.getSerialNumber(),
-				spec.getModel(),
-				spec.getBuilder(),
-				spec.getType(),
-				spec.getBackWood(),
-				spec.getTopWood(),
-				guitar.getPrice());
+			System.out.println("\nSerial: " + guitar.getSerialNumber() + ", Price: $" + guitar.getPrice());
+			System.out.println("Model: " + spec.getModel());
+			System.out.println("Builder: " + spec.getBuilder());
+			System.out.println("Type: " + spec.getType());
+			System.out.println("Back Wood: " + spec.getBackWood());
+			System.out.println("Top Wood: " + spec.getTopWood());
 		}
-		System.out.println("\n----------------------------------------------------------------------------------------------");
 	}
-
 
 	private static Builder selectBuilder(boolean allowSkip) {
 		while (true) {

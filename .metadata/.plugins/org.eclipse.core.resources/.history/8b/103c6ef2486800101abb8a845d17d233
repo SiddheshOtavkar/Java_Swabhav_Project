@@ -120,10 +120,10 @@ public class FindGuitarTester {
 			return;
 		}
 
-		System.out.println("\n----------------------------------------------------------------------------------------------");
+		System.out.println("\n------------------------------------------------------------------------------");
 		System.out.printf("| %-8s | %-10s | %-8s | %-8s | %-10s | %-10s | %-7s |\n", 
 			"Serial", "Model", "Builder", "Type", "Back Wood", "Top Wood", "Price");
-		System.out.println("\n----------------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------");
 
 		for (Guitar guitar : guitars) {
 			GuitarSpec spec = guitar.getSpec();
@@ -136,7 +136,7 @@ public class FindGuitarTester {
 				spec.getTopWood(),
 				guitar.getPrice());
 		}
-		System.out.println("\n----------------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------");
 	}
 
 

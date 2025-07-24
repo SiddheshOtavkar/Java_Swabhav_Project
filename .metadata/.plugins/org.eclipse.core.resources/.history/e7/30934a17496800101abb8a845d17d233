@@ -136,7 +136,7 @@ public class FindGuitarTester {
 				spec.getTopWood(),
 				guitar.getPrice());
 		}
-		System.out.println("\n----------------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------------------------------------");
 	}
 
 
