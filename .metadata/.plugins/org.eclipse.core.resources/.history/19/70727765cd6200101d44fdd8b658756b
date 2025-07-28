@@ -1,7 +1,0 @@
-package com.aurionpro.facade;
-
-public class EmployeeClient {
-	public void getEmployeeDetails() {
-		
-	}
-}

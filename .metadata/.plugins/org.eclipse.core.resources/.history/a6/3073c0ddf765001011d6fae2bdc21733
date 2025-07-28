@@ -1,9 +1,0 @@
-package com.aurionpro.Calculator;
-
-public class Calculator {
-	
-	public void testAddition() {
-		
-	}
-	
-}

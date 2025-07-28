@@ -1,9 +1,0 @@
-package com.aurionpro.Calculator;
-
-public class Calculator {
-	
-	public double testAddition(double num1, double num2) {
-		return
-	}
-	
-}

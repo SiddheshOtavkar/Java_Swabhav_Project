@@ -1,9 +1,0 @@
-package com.aurionpro.facade;
-
-public class EmployeeFacade {
-	EmployeeDAO employeeDAO;
-
-	public EmployeeFacade() {
-
-	}
-}

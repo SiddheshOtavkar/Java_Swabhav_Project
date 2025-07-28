@@ -1,9 +1,0 @@
-package com.miniproject.guitar.violation;
-
-public class Inventory {
-	
-	private List guitars;
-	
-	
-	
-}
