@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Feedback</title>
+</head>
+<body>
+    <h2>Submit Your Product Feedback</h2>
+    <form action="feedback" method="post">
+        Product ID: <input type="text" name="productId" required><br><br>
+        Rating (1-5): <input type="number" name="rating" min="1" max="5" required><br><br>
+        Review:<br>
+        <textarea name="review" rows="4" cols="40" required></textarea><br><br>
+        <input type="submit" value="Submit Feedback">
+    </form>
+</body>
+</html>
