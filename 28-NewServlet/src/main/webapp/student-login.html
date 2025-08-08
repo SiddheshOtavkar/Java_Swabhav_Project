@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Portal Login</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(135deg, #74ebd5, #9face6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.login-box {
+	background: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	width: 300px;
+	text-align: center;
+}
+
+.login-box h2 {
+	margin-bottom: 20px;
+	color: #333;
+}
+
+input[type="text"], input[type="submit"] {
+	padding: 10px;
+	margin: 10px 0;
+	width: 90%;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+</style>
+</head>
+<body>
+	<div class="login-box">
+		<h2>Student Login</h2>
+		<form action="studentLogin" method="post">
+			<input type="text" name="studentName" placeholder="Enter your name"
+				required> <br> <input type="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
